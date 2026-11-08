@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "name": "Coca Cola 2.25L",
+        "description": "Gaseosa cola",
+        "price": 3500,
+        "stock": 20,
+        "minStock": 5,
+        "categoryId": 1,
+        "providerId": 1,
+        "active": true
+    }
+]
