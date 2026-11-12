@@ -263,7 +263,8 @@ src/
 ├── components/
 │   └── common/
 ├── context/
-│   └── AuthContext.jsx
+│   ├── AuthContext.jsx
+│   ├── DataContext.jsx
 ├── data/
 │   ├── users.json
 │   ├── products.json
@@ -271,7 +272,8 @@ src/
 │   ├── providers.json
 │   └── sales.json
 ├── hooks/
-│   └── useAuth.js
+│   ├── useAuth.js
+│   └── useData.js
 ├── layouts/
 │   └── MainLayout.jsx
 ├── pages/
@@ -282,6 +284,7 @@ src/
 │   ├── users/
 │   └── sales/
 ├── services/
+│   ├── storageService.js
 │   ├── productService.js
 │   ├── categoryService.js
 │   ├── providerService.js
@@ -300,6 +303,8 @@ src/
 - `layouts/`: estructuras generales de las páginas.
 - `pages/`: páginas y módulos funcionales.
 - `services/`: funciones para consultar y modificar los datos.
+
+`DataContext` es la fuente compartida de usuarios, productos, categorías, proveedores y ventas. `AuthContext` depende de `DataContext` para autenticar usuarios y mantener una sesión asociada a un usuario activo. La persistencia y carga inicial se centralizan en `storageService.js`. Las operaciones de venta validan el stock y guardan el descuento de inventario junto con el registro histórico en una única actualización.
 
 ### Convenciones
 

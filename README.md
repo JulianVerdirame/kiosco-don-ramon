@@ -40,6 +40,7 @@ Al iniciar sesión, el empleado accede directamente a la sección de **Nueva ven
 - **Vite:** entorno de desarrollo y herramienta de construcción.
 - **React Router DOM:** navegación entre páginas.
 - **Context API:** gestión del estado global y autenticación.
+- **Bootstrap:** estilos y componentes visuales.
 - **LocalStorage:** persistencia local de los datos en el navegador.
 - **CSS:** estilos y diseño de la interfaz.
 
@@ -48,6 +49,8 @@ Al iniciar sesión, el empleado accede directamente a la sección de **Nueva ven
 La aplicación no cuenta con un backend ni una base de datos externa.
 
 Los datos iniciales se encuentran definidos en archivos JSON dentro del proyecto. Las modificaciones realizadas durante el uso de la aplicación se almacenan en `localStorage`, permitiendo conservar los cambios entre recargas del navegador.
+
+El estado de las entidades compartidas se administra desde `DataContext`, que utiliza los archivos JSON como datos iniciales. El inventario y las ventas comparten ese estado: confirmar una venta valida y descuenta el stock y registra el detalle histórico en una única operación. `AuthContext` gestiona la sesión y autentica contra los usuarios de ese mismo estado.
 
 ## Funcionamiento de las ventas
 
@@ -68,7 +71,8 @@ src/
 ├── components/
 │   └── common/
 ├── context/
-│   └── AuthContext.jsx
+│   ├── AuthContext.jsx
+│   └── DataContext.jsx
 ├── data/
 │   ├── users.json
 │   ├── products.json
