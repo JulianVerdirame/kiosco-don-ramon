@@ -1,0 +1,5 @@
+.inventory-notice { padding: 11px 14px; border-radius: var(--inv-radius); margin-bottom: 14px; }
+.inventory-notice--ok      { background: var(--inv-ok-bg);      color: var(--inv-ok); }
+.inventory-notice--warning { background: var(--inv-warning-bg); color: var(--inv-warning); }
+.inventory-notice--danger  { background: var(--inv-danger-bg);  color: var(--inv-danger-dark); }
+.inventory-notice--clickable { cursor: pointer; }

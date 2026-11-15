@@ -1,0 +1,15 @@
+.inventory-field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+.inventory-field__label { font-size: 0.85rem; font-weight: 600; color: white; }
+.inventory-field__control {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--inv-border);
+  border-radius: var(--inv-radius);
+  padding: 8px 12px;
+  background: var(--inv-surface);
+  color: var(--inv-text);
+  font: inherit;
+}
+.inventory-field__control:focus { outline: 2px solid var(--inv-accent); outline-offset: -1px; }
+.inventory-field { text-align: left; }
+textarea.inventory-field__control { resize: vertical; }

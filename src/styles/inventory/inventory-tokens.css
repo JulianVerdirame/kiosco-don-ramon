@@ -1,0 +1,31 @@
+:root {
+  /* Marca: madera y mostaza */
+  --inv-brand: #7a4a2b;
+  --inv-brand-dark: #5c3720;
+  --inv-accent: #e8a33d;
+
+  /* Superficies y texto */
+  --inv-surface: #ffffff;
+  --inv-surface-alt: #fbeccb;   /* encabezado de tabla y hover de botones */
+  --inv-row-hover: #fff8e6;
+  --inv-text: #3b2a1e;
+  --inv-text-muted: #8a7560;
+  --inv-border: #e6d7b8;
+
+  /* Acciones */
+  --inv-success: #2f7d4f;       /* Editar */
+  --inv-success-dark: #256340;
+  --inv-danger: #c0392b;        /* Eliminar */
+  --inv-danger-dark: #992d22;
+  --inv-danger-bg: #fbe4e1;
+
+  /* Avisos y etiquetas */
+  --inv-ok: #1f7a4d;
+  --inv-ok-bg: #e0f3e8;
+  --inv-warning: #7a5200;
+  --inv-warning-bg: #fff1c9;
+
+  /* Forma */
+  --inv-radius: 8px;
+  --inv-radius-lg: 12px;
+}

@@ -1,0 +1,34 @@
+/* el var (--inv) es para que se pueda cambiar el color de los botones en el archivo variables.css, y asi poder cambiar el color de todos los botones de la aplicacion. Se les pone el nombre de la clase correspondiente a cada tipo de botón */
+
+.inventory-button {
+  border: 1px solid var(--inv-border);
+  border-radius: var(--inv-radius);
+  padding: 8px 14px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--inv-text);
+  background: var(--inv-surface);
+  cursor: pointer;
+}
+.inventory-button:hover { background: var(--inv-surface-alt); }
+
+/* Acción principal: Nuevo, Guardar */
+.inventory-button--primary { background: var(--inv-brand); border-color: var(--inv-brand); color: #fff; }
+.inventory-button--primary:hover { background: var(--inv-brand-dark); border-color: var(--inv-brand-dark); }
+
+
+/* Editar */
+.inventory-button--success { background: var(--inv-success); border-color: var(--inv-success); color: #fff; }
+.inventory-button--success:hover { background: #fff; border-color: var(--inv-success); color: var(--inv-success); }
+
+/* Eliminar */
+.inventory-button--danger { background: var(--inv-danger); border-color: var(--inv-danger); color: #fff; }
+.inventory-button--danger:hover { background: #fff; border-color: var(--inv-danger); color: var(--inv-danger); }
+
+
+
+.inventory-button--small { padding: 4px 10px; font-size: 0.85rem;}
+
+/* Acción destacada sobre fondo oscuro: "+ Nuevo ..." */
+.inventory-button--accent { background: var(--inv-accent); border-color: var(--inv-accent); color: var(--inv-brand-dark); }
+.inventory-button--accent:hover { background: #fff; border-color: #fff; }
