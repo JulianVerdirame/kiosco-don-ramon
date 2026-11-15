@@ -1,0 +1,31 @@
+.category-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+.category-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 18px 22px;
+  background: var(--inv-brand);
+  border-bottom: 4px solid var(--inv-accent);
+  border-radius: var(--inv-radius-lg);
+  text-align: left;
+}
+.category-list__title    { margin: 0; font-size: 1.5rem; font-weight: 700; color: #fff; }
+.category-list__subtitle { margin: 4px 0 0; color: rgba(255, 255, 255, 0.8); }
+
+.category-list__table-wrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #e4e0d6;
+  border-radius: 12px;
+  color: black;
+}
+
+.category-list__actions { display: flex; gap: 10px; justify-content: flex-end; }
