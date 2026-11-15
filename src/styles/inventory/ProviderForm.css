@@ -1,0 +1,10 @@
+.provider-form { text-align: left; }
+
+.provider-form__actions {
+  display: inline-flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--inv-border);
+}

@@ -1,0 +1,32 @@
+.provider-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+/* Encabezado */
+.provider-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 18px 22px;
+  background: var(--inv-brand);
+  border-bottom: 4px solid var(--inv-accent);
+  border-radius: var(--inv-radius-lg);
+  text-align: left;
+}
+.provider-list__title    { margin: 0; font-size: 1.5rem; font-weight: 700; color: #fff; }
+.provider-list__subtitle { margin: 4px 0 0; color: rgba(255, 255, 255, 0.8); }
+
+/* Tabla */
+.provider-list__table-wrap {
+  overflow-x: auto;
+  background: var(--inv-surface);
+  border: 1px solid var(--inv-border);
+  border-radius: var(--inv-radius-lg);
+  color: var(--inv-text);
+}
+.provider-list__actions { display: flex; gap: 10px; justify-content: flex-end; }
