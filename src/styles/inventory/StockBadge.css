@@ -1,0 +1,11 @@
+.stock-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.stock-badge--normal    { background: var(--inv-ok-bg);      color: var(--inv-ok); }
+.stock-badge--bajo      { background: var(--inv-warning-bg); color: var(--inv-warning); }
+.stock-badge--sin-stock { background: var(--inv-danger-bg);  color: var(--inv-danger-dark); }

@@ -1,0 +1,25 @@
+/* Los campos van de a dos columnas; los "full" ocupan el ancho completo */
+.product-form { text-align: left; }
+
+/* Dos columnas; los campos "full" ocupan las dos */
+.product-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
+}
+.product-form__field--full { grid-column: span 2; }
+
+.product-form__actions {
+  display: inline-flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--inv-border);
+}
+
+/* En pantallas angostas, una sola columna */
+@media (max-width: 640px) {
+  .product-form__grid { grid-template-columns: 1fr; }
+  .product-form__field--full { grid-column: auto; }
+}
