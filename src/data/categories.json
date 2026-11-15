@@ -1,7 +1,9 @@
 [
-    {
-        "id": 1,
-        "name": "Bebidas",
-        "description": "Bebidas con y sin alcohol"
-    }
+  { "id": 1, "name": "Bebidas", "description": "Productos líquidos y refrescantes" },
+  { "id": 2, "name": "Cervezas", "description": "Bebidas derivadas del alcohol" },
+  { "id": 3, "name": "Alimentos", "description": "Productos comestibles" },
+  { "id": 4, "name": "Limpieza", "description": "Productos de aseo y desinfección" },
+  { "id": 5, "name": "Lácteos", "description": "Productos derivados de la leche" },
+  { "id": 6, "name": "Fiambres", "description": "Productos derivados de carnes procesadas, embutidos y carnes frías" },
+  { "id": 7, "name": "Cigarrillos", "description": "Artículos derivados del tabaco, incluyendo cigarrillos de diversas marcas y presentaciones" }
 ]

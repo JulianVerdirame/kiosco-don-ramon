@@ -1,8 +1,20 @@
 [
     {
         "id": 1,
-        "name": "Distribuidora Central",
-        "phone": "1122334455",
-        "email": "proveedor@email.com"
+        "name": "Lucas Salvarrey",
+        "phone": "112233445",
+        "email": "lucas@email.com"
+    },
+    {
+        "id": 2,
+        "name": "Javier Solis",
+        "phone": "115551234",
+        "email": "javier@email.com"
+    },
+    {
+        "id": 3,
+        "name": "Julian Verdirame",
+        "phone": "115025678",
+        "email": "julian@email.com"
     }
 ]

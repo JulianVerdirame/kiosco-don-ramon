@@ -9,5 +9,105 @@
         "categoryId": 1,
         "providerId": 1,
         "active": true
+    },
+    {
+        "id": 2,
+        "name": "Heineken Lata 473ml",
+        "description": "Cerveza Heineken en lata de 473 ml",
+        "price": 2000,
+        "stock": 25,
+        "minStock": 5,
+        "categoryId": 2,
+        "providerId": 2,
+        "active": true
+    },
+    {
+        "id": 3,
+        "name": "Magistral Grande",
+        "description": "Detergente Magistral 750 ml",
+        "price": 3000,
+        "stock": 15,
+        "minStock": 5,
+        "categoryId": 4,
+        "providerId": 3,
+        "active": true
+    },
+    {
+        "id": 4,
+        "name": "Manteca Tonadita 200g",
+        "description": "Manteca Tonadita presentación 200g",
+        "price": 2600,
+        "stock": 15,
+        "minStock": 5,
+        "categoryId": 3,
+        "providerId": 3,
+        "active": true
+    },
+    {
+        "id": 5,
+        "name": "Queso Cremoso Tregar",
+        "description": "Queso cremoso por kilo",
+        "price": 5800,
+        "stock": 12,
+        "minStock": 5,
+        "categoryId": 5,
+        "providerId": 2,
+        "active": true
+    },
+    {
+        "id": 6,
+        "name": "Marlboro Ks",
+        "description": "Cigarrillos Marlboro paquete 20 unidades",
+        "price": 5100,
+        "stock": 15,
+        "minStock": 5,
+        "categoryId": 7,
+        "providerId": 1,
+        "active": true
+    },
+    {
+        "id": 7,
+        "name": "Red Point Ks",
+        "description": "Cigarrillos Red Point paquete 20 unidades",
+        "price": 2000,
+        "stock": 25,
+        "minStock": 5,
+        "categoryId": 7,
+        "providerId": 2,
+        "active": true
+    },
+    {
+        "id": 8,
+        "name": "Caramelos Billiken",
+        "description": "Caramelos surtidos",
+        "price": 500,
+        "stock": 40,
+        "minStock": 5,
+        "categoryId": 3,
+        "providerId": 3,
+        "active": true
+    },
+    {
+        "id": 9,
+        "name": "Chupetín Pico Dulce",
+        "description": "Chupetín clásico",
+        "price": 300,
+        "stock": 30,
+        "minStock": 5,
+        "categoryId": 3,
+        "providerId": 3,
+        "active": true
+    },
+    {
+        "id": 10,
+        "name": "Alfajor Jorgito",
+        "description": "Alfajor dulce de leche",
+        "price": 400,
+        "stock": 25,
+        "minStock": 5,
+        "categoryId": 3,
+        "providerId": 2,
+        "active": true
     }
 ]
+
