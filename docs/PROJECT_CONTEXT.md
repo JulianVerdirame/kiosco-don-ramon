@@ -343,6 +343,7 @@ La autenticación es exclusivamente demostrativa: no representa un sistema de se
 - React Router DOM.
 - Context API.
 - Hooks de React.
+- Bootstrap
 - CSS.
 - JSON.
 - LocalStorage.

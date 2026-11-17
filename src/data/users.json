@@ -6,5 +6,21 @@
         "name": "Administrador",
         "role": "admin",
         "active": true
+    },
+    {
+        "id": 2,
+        "username": "user1",
+        "password": "1234",
+        "name": "Usuario 1",
+        "role": "empleado",
+        "active": true
+    },
+    {
+        "id": 3,
+        "username": "user2",
+        "password": "1234",
+        "name": "Usuario 2",
+        "role": "empleado",
+        "active": true
     }
 ]
