@@ -2,12 +2,15 @@ import { useState } from 'react'
 import { Store } from 'lucide-react'
 import { useAuth } from '../hooks/useAuth'
 import './Login.css'
+import { useNavigate } from 'react-router-dom'
 
-function Login() {
+export const Login = () => {
   const { login } = useAuth()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+
+  const navigate = useNavigate()
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -15,8 +18,8 @@ function Login() {
     if (!login(username.trim(), password)) {
       setError('El usuario o la contraseña no son correctos.')
     }
-
-    //TODO: redireccionar a la página principal del sistema según el rol del usuario
+    
+    navigate('/', { replace: true })
   }
 
   return (
@@ -100,5 +103,3 @@ function Login() {
     </main>
   )
 }
-
-export default Login
