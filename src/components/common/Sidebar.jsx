@@ -17,12 +17,10 @@ const adminItems = [
   { label: 'Categorías', to: '/categories', icon: Tag },
   { label: 'Proveedores', to: '/providers', icon: Truck },
   { label: 'Usuarios', to: '/users', icon: Users },
-  { label: 'Consultar stock', to: '/stock', icon: Box },
 ]
 
 const employeeItems = [
   { label: 'Nueva venta', to: '/sales', icon: ShoppingCart },
-  { label: 'Consultar stock', to: '/stock', icon: Box },
 ]
 
 export const Sidebar = () => {
