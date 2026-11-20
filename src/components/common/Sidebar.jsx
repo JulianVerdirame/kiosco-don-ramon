@@ -1,5 +1,4 @@
 import {
-  Box,
   LogOut,
   Package,
   ShoppingCart,
@@ -40,21 +39,19 @@ export const Sidebar = () => {
   }
 
   return (
-    <aside className="sidebar" aria-label="Navegación principal">
-      <div className="sidebar__brand">
-        <Store className="sidebar__brand-icon" aria-hidden="true" />
+    <aside className="sidebar d-flex flex-column p-3 text-white" aria-label="Navegación principal">
+      <div className="sidebar__brand d-flex align-items-center gap-3 px-2">
+        <Store className="sidebar__brand-icon flex-shrink-0" aria-hidden="true" />
         <span>
           Kiosco
           <strong>Don Ramón</strong>
         </span>
       </div>
 
-      <nav className="sidebar__nav" aria-label="Secciones">
+      <nav className="nav nav-pills flex-column gap-2 mt-4" aria-label="Secciones">
         {items.map(({ label, to, icon: Icon }) => (
           <NavLink
-            className={({ isActive }) =>
-              isActive ? 'sidebar__link sidebar__link--active' : 'sidebar__link'
-            }
+            className={({ isActive }) => `nav-link d-flex align-items-center gap-3 sidebar__link${isActive ? ' active' : ''}`}
             end
             key={to}
             to={to}
@@ -65,7 +62,7 @@ export const Sidebar = () => {
         ))}
       </nav>
 
-      <button className="sidebar__logout" onClick={handleLogout} type="button">
+      <button className="btn sidebar__logout text-white d-flex align-items-center gap-3 mt-auto w-100 text-start" onClick={handleLogout} type="button">
         <LogOut size={20} aria-hidden="true" />
         <span>Cerrar sesión</span>
       </button>
