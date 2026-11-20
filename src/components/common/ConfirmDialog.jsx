@@ -1,4 +1,4 @@
-import Modal from './Modal';
+import Modal from '../common/InventoryModal';
 import '../../styles/inventory/inventory.css';
 import '../../styles/inventory/ConfirmDialog.css';
 

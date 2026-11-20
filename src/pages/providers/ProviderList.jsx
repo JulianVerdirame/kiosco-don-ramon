@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Modal from '../../components/common/Modal';
+import Modal from '../../components/common/InventoryModal';
 import ConfirmDialog from '../../components/common/ConfirmDialog';
 import ProviderForm from './ProviderForm';
 import {
