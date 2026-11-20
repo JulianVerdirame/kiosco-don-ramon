@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Store } from 'lucide-react'
 import { useAuth } from '../hooks/useAuth'
 import './Login.css'
 import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
-  const { login } = useAuth()
+  const { login, logout } = useAuth()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -22,6 +22,13 @@ export const Login = () => {
     navigate('/', { replace: true })
   }
 
+  useEffect(() => {
+    // Se cierra la sesión automaticamente si el usuario vuelve al login manipulando la url
+    // Esto es para evitar que un usuario logueado pueda volver a la página de login y loguearse con otro usuario, 
+    // o vueva a ingresar a otra pagina mediante URL provocando un comportamiento extraño
+    logout()
+  }, [])
+  
   return (
     <main className="login-page">
       <section className="login-card" aria-label="Acceso al sistema">
@@ -56,8 +63,8 @@ export const Login = () => {
                   autoComplete="username"
                   id="username"
                   name="username"
-                  onChange={(event) => {
-                    setUsername(event.target.value)
+                  onChange={(e) => {
+                    setUsername(e.target.value)
                     setError('')
                   }}
                   placeholder="Ingresá tu usuario"
@@ -70,8 +77,8 @@ export const Login = () => {
                   autoComplete="current-password"
                   id="password"
                   name="password"
-                  onChange={(event) => {
-                    setPassword(event.target.value)
+                  onChange={(e) => {
+                    setPassword(e.target.value)
                     setError('')
                   }}
                   placeholder="Ingresá tu contraseña"
