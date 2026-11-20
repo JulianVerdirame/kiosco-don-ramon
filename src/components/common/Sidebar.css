@@ -1,6 +1,8 @@
 .sidebar {
   flex: 0 0 248px;
-  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  height: 100vh;
   background: linear-gradient(160deg, var(--color-brand-navy), var(--color-brand-navy-dark));
 }
 
