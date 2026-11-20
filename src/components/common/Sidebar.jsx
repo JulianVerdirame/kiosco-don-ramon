@@ -7,6 +7,7 @@ import {
   Tag,
   Truck,
   Users,
+  Receipt,
 } from 'lucide-react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
@@ -21,6 +22,7 @@ const adminItems = [
 
 const employeeItems = [
   { label: 'Nueva venta', to: '/sales', icon: ShoppingCart },
+  { label: 'Historial de ventas', to: '/sales/history', icon: Receipt },
 ]
 
 export const Sidebar = () => {

@@ -24,7 +24,8 @@ export const App = () => {
         <Route path="/sales" element={<ProtectedRoute><PointOfSale /></ProtectedRoute>} />
         <Route path="/sales/history" element={<ProtectedRoute><SalesHistory /></ProtectedRoute>} />
       </Route>
-
     </Routes>
   )
 }
+
+export default App
