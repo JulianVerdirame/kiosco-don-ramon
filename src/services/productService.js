@@ -26,6 +26,7 @@ function validate(data, categoryExists, providerExists) {
   const minStock = Number(data.minStock);
   const categoryId = Number(data.categoryId);
   const providerId = Number(data.providerId);
+  const image = String(data.image ?? 'coca-cola.jpg').trim();
 
   //Number('') da 0, así que un precio vacío pasaría como si fuera 0. Por eso se comprueba aparte data.price === ''.
   //Number.isFinite(price) rechaza NaN (por ejemplo, "abc") y los infinitos.
@@ -38,7 +39,8 @@ function validate(data, categoryExists, providerExists) {
     throw new Error('El stock mínimo debe ser un entero mayor o igual a 0');
   if (!categoryExists(categoryId)) throw new Error('Elegí una categoría válida');
   if (!providerExists(providerId)) throw new Error('Elegí un proveedor válido');
-
+  if (image && !/^[\w.-]+\.(jpg|jpeg|png|webp|gif)$/i.test(image))
+    throw new Error('La imagen debe ser un nombre de archivo .jpg, .png o .webp (ej.: gaseosa.jpg)');
   return {
     name,
     description: String(data.description ?? '').trim(),
@@ -47,6 +49,7 @@ function validate(data, categoryExists, providerExists) {
     minStock,
     categoryId,
     providerId,
+    image,
   };
 }
 

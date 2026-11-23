@@ -3,11 +3,14 @@ import { getCategories } from '../../services/categoryService';
 import { getProviders } from '../../services/providerService';
 import '../../styles/inventory/inventory.css';
 import '../../styles/inventory/productForm.css';
+import ProductImage from '../../components/common/products/ProductImage';
+
 
 const EMPTY = {
   name: '',
   description: '',
   price: '',
+  image: '',
   stock: '',
   minStock: 5,
   categoryId: '',
