@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Button, Card, Table } from 'react-bootstrap';
 import Modal from '../../components/common/InventoryModal';
 import ConfirmDialog from '../../components/common/ConfirmDialog';
 import ProviderForm from './ProviderForm';
@@ -56,44 +57,44 @@ export default function ProviderList() {
         <div className={`inventory-notice inventory-notice--${notice.tone}`} onClick={() => setNotice(null)}>{notice.text}</div>
       )}
 
-      <div className="table-wrap">
-        <table className="inventory-table">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Teléfono</th>
-              <th>Email</th>
-              <th className="inventory-table__cell--number">Productos</th>
-              <th className="inventory-table__cell--actions">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {providers.map((p) => (
-              <tr key={p.id}>
-                <td><strong>{p.name}</strong></td>
-                <td>{p.phone}</td>
-                <td>{p.email}</td>
-                <td className="inventory-table__cell--number">{countProductsByProvider(p.id)}</td>
-                <td className="inventory-table__cell--actions">
-                  <div className="provider-list__actions">
-                    <button className="inventory-button inventory-button--small inventory-button--success"
-                      onClick={() => setEditing(p)}>
-                      Editar
-                    </button>
-                    <button className="inventory-button inventory-button--small inventory-button--danger"
-                      onClick={() => setToDelete(p)}>
-                      Eliminar
-                    </button>
-                  </div>
-                </td>
+      <Card className="border-0 shadow-sm rounded-4 overflow-hidden">
+        <Card.Body className="p-0">
+          <Table hover responsive className="align-middle mb-0">
+            <thead className="table-secondary">
+              <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th className="text-end">Productos</th>
+                <th className="text-end pe-3">Acciones</th>
               </tr>
-            ))}
-            {!providers.length && (
-              <tr><td colSpan={5} className="inventory-table__empty">No hay proveedores cargados</td></tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {providers.map((p) => (
+                <tr key={p.id}>
+                  <td><strong>{p.name}</strong></td>
+                  <td>{p.phone}</td>
+                  <td>{p.email}</td>
+                  <td className="text-end">{countProductsByProvider(p.id)}</td>
+                  <td className="text-end pe-3">
+                    <div className="d-flex justify-content-end gap-2">
+                      <Button variant="outline-success" size="sm" onClick={() => setEditing(p)}>
+                        Editar
+                      </Button>
+                      <Button variant="outline-danger" size="sm" onClick={() => setToDelete(p)}>
+                        Eliminar
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+              {!providers.length && (
+                <tr><td colSpan={5} className="text-center text-muted py-5">No hay proveedores cargados</td></tr>
+              )}
+            </tbody>
+          </Table>
+        </Card.Body>
+      </Card>
 
       {editing && (
         <Modal title={editing === 'new' ? 'Nuevo proveedor' : 'Editar proveedor'} onClose={() => setEditing(null)}>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Button, Card, Form, Table } from 'react-bootstrap';
 import Modal from '../../components/common/InventoryModal';
 import ConfirmDialog from '../../components/common/ConfirmDialog';
 import StockBadge from '../../components/common/products/StockBadge';
@@ -89,90 +90,89 @@ export default function ProductList() {
       </div>
     )}
 
-    <div className="product-list__toolbar">
-      <input className="product-list__search"
-        type="search"
-        placeholder="Buscar producto…"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <select
-        className="product-list__filter"
-        value={categoryId}
-        onChange={(e) => setCategoryId(e.target.value)}
-      >
-        <option value="">Todas las categorías</option>
-        {categories.map((c) => (
-          <option key={c.id} value={c.id}>{c.name}</option>
-        ))}
-      </select>
-      <label className="product-list__checkbox">
-        <input
+    <div className="row g-2 align-items-center mb-3">
+      <div className="col-12 col-md">
+        <Form.Control
+          type="search"
+          placeholder="Buscar producto…"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+      <div className="col-12 col-md-auto">
+        <Form.Select
+          value={categoryId}
+          onChange={(e) => setCategoryId(e.target.value)}
+        >
+          <option value="">Todas las categorías</option>
+          {categories.map((c) => (
+            <option key={c.id} value={c.id}>{c.name}</option>
+          ))}
+        </Form.Select>
+      </div>
+      <div className="col-12 col-md-auto">
+        <Form.Check
           type="checkbox"
+          label="Solo stock bajo"
           checked={onlyLowStock}
           onChange={(e) => setOnlyLowStock(e.target.checked)}
         />
-        Solo stock bajo
-      </label>
-    </div>
-      <div className="table-wrap">
-        <table className="inventory-table">
-          <thead>
-            <tr>
-              <th>Producto</th>
-              <th>Categoría</th>
-              <th>Proveedor</th>
-              <th className="inventory-table__cell--number">Precio</th>
-              <th className="inventory-table__cell--number">Stock</th>
-              <th>Estado</th>
-              <th className="inventory-table__cell--actions">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((p) => (
-              <tr key={p.id}>
-                <td>
-                  <div className="product-list__product">
-                    <ProductImage product={p} />
-                    <div className="product-list__product-text">
-                      <strong>{p.name}</strong>
-                      {p.description && <small>{p.description}</small>}
-                      </div>
-                      </div>
-                    </td>
-                <td>{getCategoryById(p.categoryId)?.name ?? '—'}</td>
-                <td>{getProviderById(p.providerId)?.name ?? '—'}</td>
-                <td className="inventory-table__cell--number">{money(p.price)}</td>
-                <td className="inventory-table__cell--number">
-                  {p.stock} <small className="product-list__min-stock">/ mín. {p.minStock}</small>
-                </td>
-                <td><StockBadge product={p} /></td>
-                <td className="inventory-table__cell--actions">
-                  <div className="product-list__actions">
-                    <button
-                      className="inventory-button inventory-button--small inventory-button--success"
-                      onClick={() => setEditing(p)}
-                    >
-                      Editar
-                    </button>
-                    <button
-                      className="inventory-button inventory-button--small inventory-button--danger"
-                      onClick={() => setToDelete(p)}
-                    >
-                      Eliminar
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-            {!products.length && (
-              <tr>
-                <td colSpan={7} className="inventory-table__empty">No se encontraron productos</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
       </div>
+    </div>
+      <Card className="border-0 shadow-sm rounded-4 overflow-hidden">
+        <Card.Body className="p-0">
+          <Table hover responsive className="align-middle mb-0">
+            <thead className="table-secondary">
+              <tr>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Proveedor</th>
+                <th className="text-end">Precio</th>
+                <th className="text-end">Stock</th>
+                <th>Estado</th>
+                <th className="text-end pe-3">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((p) => (
+                <tr key={p.id}>
+                  <td>
+                    <div className="product-list__product">
+                      <ProductImage product={p} />
+                      <div className="product-list__product-text">
+                        <strong>{p.name}</strong>
+                        {p.description && <small>{p.description}</small>}
+                      </div>
+                    </div>
+                  </td>
+                  <td>{getCategoryById(p.categoryId)?.name ?? '—'}</td>
+                  <td>{getProviderById(p.providerId)?.name ?? '—'}</td>
+                  <td className="text-end">{money(p.price)}</td>
+                  <td className="text-end">
+                    {p.stock} <small className="product-list__min-stock">/ mín. {p.minStock}</small>
+                  </td>
+                  <td><StockBadge product={p} /></td>
+                  <td className="text-end pe-3">
+                    <div className="d-flex justify-content-end gap-2">
+                      <Button variant="outline-success" size="sm" onClick={() => setEditing(p)}>
+                        Editar
+                      </Button>
+                      <Button variant="outline-danger" size="sm" onClick={() => setToDelete(p)}>
+                        Eliminar
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+              {!products.length && (
+                <tr>
+                  <td colSpan={7} className="text-center text-muted py-5">No se encontraron productos</td>
+                </tr>
+              )}
+            </tbody>
+          </Table>
+        </Card.Body>
+      </Card>
 
       {editing && (
         <Modal title={editing === 'new' ? 'Nuevo producto' : 'Editar producto'} onClose={() => setEditing(null)}>

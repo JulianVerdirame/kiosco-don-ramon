@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Button, Card, Table } from 'react-bootstrap';
 import Modal from '../../components/common/InventoryModal';
 import ConfirmDialog from '../../components/common/ConfirmDialog';
 import CategoryForm from './CategoryForm';
@@ -58,42 +59,42 @@ export default function CategoryList() {
         <div className={`inventory-notice inventory-notice--${notice.tone}`} onClick={() => setNotice(null)}>{notice.text}</div>
       )}
 
-      <div className="table-wrap">
-        <table className="inventory-table">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th className="inventory-table__cell--number">Productos</th>
-              <th className="inventory-table__cell--actions">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {categories.map((c) => (
-              <tr key={c.id}>
-                <td><strong>{c.name}</strong></td>
-                <td>{c.description || '—'}</td>
-                <td className="inventory-table__cell--number">{countProductsByCategory(c.id)}</td>
-                <td className="inventory-table__cell--actions">
-                  <div className="category-list__actions">
-                    <button
-                    className="inventory-button inventory-button--small inventory-button--success"
-                    onClick={() => setEditing(c)}>
-                    Editar
-                    </button>
-                    <button className="inventory-button inventory-button--small inventory-button--danger" onClick={() => setToDelete(c)}>
-                      Eliminar
-                    </button>
-                    </div>
-                </td>
+      <Card className="border-0 shadow-sm rounded-4 overflow-hidden">
+        <Card.Body className="p-0">
+          <Table hover responsive className="align-middle mb-0">
+            <thead className="table-secondary">
+              <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th className="text-end">Productos</th>
+                <th className="text-end pe-3">Acciones</th>
               </tr>
-            ))}
-            {!categories.length && (
-              <tr><td colSpan={4} className="inventory-table__empty">No hay categorías cargadas</td></tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {categories.map((c) => (
+                <tr key={c.id}>
+                  <td><strong>{c.name}</strong></td>
+                  <td>{c.description || '—'}</td>
+                  <td className="text-end">{countProductsByCategory(c.id)}</td>
+                  <td className="text-end pe-3">
+                    <div className="d-flex justify-content-end gap-2">
+                      <Button variant="outline-success" size="sm" onClick={() => setEditing(c)}>
+                        Editar
+                      </Button>
+                      <Button variant="outline-danger" size="sm" onClick={() => setToDelete(c)}>
+                        Eliminar
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+              {!categories.length && (
+                <tr><td colSpan={4} className="text-center text-muted py-5">No hay categorías cargadas</td></tr>
+              )}
+            </tbody>
+          </Table>
+        </Card.Body>
+      </Card>
 
       {editing && (
         <Modal title={editing === 'new' ? 'Nueva categoría' : 'Editar categoría'} onClose={() => setEditing(null)}>
