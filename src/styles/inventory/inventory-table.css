@@ -13,3 +13,11 @@
 .inventory-table__cell--number  { text-align: right; }
 .inventory-table__cell--actions { text-align: right; white-space: nowrap; }
 .inventory-table__empty { text-align: center; color: var(--inv-text-muted); padding: 28px; }
+
+.table-wrap {
+  overflow-x: auto;
+  background: var(--inv-surface);
+  border: 1px solid var(--inv-border);
+  border-radius: var(--inv-radius-lg);
+  color: var(--inv-text);
+}

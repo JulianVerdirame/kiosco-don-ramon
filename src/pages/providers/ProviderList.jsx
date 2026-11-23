@@ -11,6 +11,8 @@ import {
 } from '../../services/providerService';
 import '../../styles/inventory/inventory.css';
 import '../../styles/inventory/providerList.css';
+import { TitleCard } from '../../components/common/TitleCard';
+import { Truck } from 'lucide-react';
 
 export default function ProviderList() {
   const [providers, setProviders] = useState(getProviders);
@@ -41,21 +43,20 @@ export default function ProviderList() {
 
   return (
     <section className="provider-list">
-      <header className="provider-list__header">
-  <div>
-    <h1 className="provider-list__title">Proveedores</h1>
-    <p className="provider-list__subtitle">Contactos de quienes abastecen el kiosco</p>
-  </div>
-  <button className="inventory-button inventory-button--accent" onClick={() => setEditing('new')}>
-    + Nuevo proveedor
-  </button>
-</header>
+
+      <TitleCard
+        title="Proveedores"
+        subtitle="Contactos de quienes abastecen el kiosco"
+        icon={Truck}
+        textButton="+ Nuevo proveedor"
+        funcButton={() => setEditing('new')}
+      />
 
       {notice && (
         <div className={`inventory-notice inventory-notice--${notice.tone}`} onClick={() => setNotice(null)}>{notice.text}</div>
       )}
 
-      <div className="provider-list__table-wrap">
+      <div className="table-wrap">
         <table className="inventory-table">
           <thead>
             <tr>
@@ -74,18 +75,18 @@ export default function ProviderList() {
                 <td>{p.email}</td>
                 <td className="inventory-table__cell--number">{countProductsByProvider(p.id)}</td>
                 <td className="inventory-table__cell--actions">
-                <div className="provider-list__actions">
-              <button className="inventory-button inventory-button--small inventory-button--success"
-                onClick={() => setEditing(p)}>
-                Editar
-              </button>
-              <button className="inventory-button inventory-button--small inventory-button--danger"
-              onClick={() => setToDelete(p)}>
-               Eliminar
-              </button>
-              </div>
-            </td>
-          </tr>
+                  <div className="provider-list__actions">
+                    <button className="inventory-button inventory-button--small inventory-button--success"
+                      onClick={() => setEditing(p)}>
+                      Editar
+                    </button>
+                    <button className="inventory-button inventory-button--small inventory-button--danger"
+                      onClick={() => setToDelete(p)}>
+                      Eliminar
+                    </button>
+                  </div>
+                </td>
+              </tr>
             ))}
             {!providers.length && (
               <tr><td colSpan={5} className="inventory-table__empty">No hay proveedores cargados</td></tr>
