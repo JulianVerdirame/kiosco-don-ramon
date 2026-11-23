@@ -1,0 +1,54 @@
+.sidebar {
+  flex: 0 0 248px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: linear-gradient(160deg, var(--color-brand-navy), var(--color-brand-navy-dark));
+}
+
+.sidebar__brand {
+  min-height: 78px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.sidebar__brand strong {
+  display: block;
+  font-weight: 800;
+}
+
+.sidebar__brand-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.sidebar .sidebar__link {
+  min-height: 48px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: background-color 150ms ease;
+}
+
+.sidebar .sidebar__link:hover,
+.sidebar .sidebar__link.active {
+  color: var(--color-white);
+}
+
+.sidebar .sidebar__link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .sidebar__link.active {
+  background-color: var(--color-brand-blue);
+  font-weight: 600;
+}
+
+.sidebar .sidebar__logout {
+  transition: background-color 150ms ease;
+}
+
+.sidebar .sidebar__logout:hover,
+.sidebar .sidebar__logout:focus-visible {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: var(--color-white);
+}

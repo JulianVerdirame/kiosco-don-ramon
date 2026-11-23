@@ -8,11 +8,11 @@ export default function Modal({ title, onClose, children }) {
   }, [onClose]);
 
   return (
-    <div className="modal-overlay" onMouseDown={onClose}>
+    <div onMouseDown={onClose}>
       <div className="modal" role="dialog" aria-modal="true" onMouseDown={(e) => e.stopPropagation()}>
-        <div className="modal-head">
+        <div>
           <h3>{title}</h3>
-          <button style={{ border: 'none', background: 'red', cursor: 'pointer' }} type="button" className="icon-btn" onClick={onClose} aria-label="Cerrar">✕</button>
+          <button style={{ border: 'none', background: 'red', cursor: 'pointer' }} type="button" onClick={onClose} aria-label="Cerrar">✕</button>
         </div>
         <div className="modal-body">{children}</div>
       </div>

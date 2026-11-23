@@ -15,6 +15,8 @@ import { getCategories, getCategoryById } from '../../services/categoryService';
 import { getProviderById } from '../../services/providerService';
 import '../../styles/inventory/inventory.css';
 import '../../styles/inventory/productList.css';
+import { Package } from 'lucide-react';
+import { TitleCard } from '../../components/common/TitleCard';
 
 
 
@@ -60,18 +62,14 @@ export default function ProductList() {
 
   return (
   <section className="product-list">
-    <header className="product-list__header">
-      <div>
-        <h1 className="product-list__title">Productos</h1>
-        <p className="product-list__subtitle">Catálogo, stock y reposición</p>
-      </div>
-      <button
-        className="inventory-button inventory-button--accent"
-        onClick={() => setEditing('new')}
-      >
-        + Nuevo producto
-      </button>
-    </header>
+
+    <TitleCard 
+      title="Productos" 
+      subtitle="Catálogo, stock y reposición" 
+      icon={Package} 
+      textButton="+ Nuevo producto" 
+      funcButton={() => setEditing('new')} 
+    />
 
     {lowStock.length > 0 && (
       <div className="inventory-notice inventory-notice--warning">
@@ -117,7 +115,7 @@ export default function ProductList() {
         Solo stock bajo
       </label>
     </div>
-      <div className="product-list__table-wrap">
+      <div className="table-wrap">
         <table className="inventory-table">
           <thead>
             <tr>

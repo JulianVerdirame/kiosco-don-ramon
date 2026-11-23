@@ -5,6 +5,7 @@ import { saveSale } from '../../services/salesService';
 import { ShoppingCart, Search, Trash2 } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import ProductImage from '../../components/common/products/ProductImage';
+import { TitleCard } from '../../components/common/TitleCard';
 
 
 export default function PointOfSale() {
@@ -90,14 +91,11 @@ export default function PointOfSale() {
 
     return (
         <div className="container-fluid p-4 bg-light min-vh-100">
-            <div className="d-flex justify-content-between align-items-center mb-4 bg-white p-3 rounded shadow-sm">
-                <div>
-                    <h4 className="fw-bold mb-0 text-dark">
-                        <ShoppingCart className="me-2 text-primary" size={24} /> Nueva Venta
-                    </h4>
-                    <small className="text-muted">Registrá una nueva venta seleccionando los productos</small>
-                </div>
-            </div>
+            <TitleCard
+              title="Nueva venta"
+              subtitle="Registrá una nueva venta seleccionando los productos"
+              icon={ShoppingCart}
+            />
 
             {feedback && (
                 <Alert variant={feedback.type} dismissible onClose={() => setFeedback(null)} className="shadow-sm">
