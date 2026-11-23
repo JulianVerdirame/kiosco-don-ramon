@@ -3,6 +3,7 @@ import Modal from '../../components/common/InventoryModal';
 import ConfirmDialog from '../../components/common/ConfirmDialog';
 import StockBadge from '../../components/common/products/StockBadge';
 import ProductForm from './ProductForm';
+import ProductImage from '../../components/common/products/ProductImage';
 import {
   getProducts,
   createProduct,
@@ -131,11 +132,14 @@ export default function ProductList() {
             {products.map((p) => (
               <tr key={p.id}>
                 <td>
-                  <strong>{p.name}</strong>
-                  {p.description && (
-                    <small className="product-list__description">{p.description}</small>
-                  )}
-                </td>
+                  <div className="product-list__product">
+                    <ProductImage product={p} />
+                    <div className="product-list__product-text">
+                      <strong>{p.name}</strong>
+                      {p.description && <small>{p.description}</small>}
+                      </div>
+                      </div>
+                    </td>
                 <td>{getCategoryById(p.categoryId)?.name ?? '—'}</td>
                 <td>{getProviderById(p.providerId)?.name ?? '—'}</td>
                 <td className="inventory-table__cell--number">{money(p.price)}</td>
@@ -188,6 +192,9 @@ export default function ProductList() {
           onCancel={() => setToDelete(null)}
         />
       )}
+      
     </section>
+
   );
+  
 }

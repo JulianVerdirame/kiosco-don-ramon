@@ -2,13 +2,14 @@
     {
         "id": 1,
         "name": "Coca Cola 2.25L",
-        "description": "Gaseosa cola",
+        "description": "Bebida gaseosa Coca-Cola 2.25 litros",
         "price": 3500,
         "stock": 20,
         "minStock": 5,
         "categoryId": 1,
         "providerId": 1,
-        "active": true
+        "active": true,
+        "image": "cocacola.jpg"
     },
     {
         "id": 2,
@@ -19,7 +20,8 @@
         "minStock": 5,
         "categoryId": 2,
         "providerId": 2,
-        "active": true
+        "active": true,
+        "image": "hei.webp"
     },
     {
         "id": 3,
@@ -30,7 +32,8 @@
         "minStock": 5,
         "categoryId": 4,
         "providerId": 3,
-        "active": true
+        "active": true,
+        "image": "magistral.jpg"
     },
     {
         "id": 4,
@@ -41,7 +44,9 @@
         "minStock": 5,
         "categoryId": 3,
         "providerId": 3,
-        "active": true
+        "active": true,
+        "image": "manteca.webp"
+
     },
     {
         "id": 5,
@@ -52,7 +57,9 @@
         "minStock": 5,
         "categoryId": 5,
         "providerId": 2,
-        "active": true
+        "active": true,
+        "image": "queso.webp"
+
     },
     {
         "id": 6,
@@ -63,7 +70,9 @@
         "minStock": 5,
         "categoryId": 7,
         "providerId": 1,
-        "active": true
+        "active": true,
+        "image": "malboro.webp"
+
     },
     {
         "id": 7,
@@ -74,7 +83,8 @@
         "minStock": 5,
         "categoryId": 7,
         "providerId": 2,
-        "active": true
+        "active": true,
+        "image": "red.webp"
     },
     {
         "id": 8,
@@ -85,7 +95,9 @@
         "minStock": 5,
         "categoryId": 3,
         "providerId": 3,
-        "active": true
+        "active": true,
+        "image": "caramelos.webp"
+
     },
     {
         "id": 9,
@@ -96,7 +108,8 @@
         "minStock": 5,
         "categoryId": 3,
         "providerId": 3,
-        "active": true
+        "active": true,
+        "image": "chupetin.webp"
     },
     {
         "id": 10,
@@ -107,6 +120,7 @@
         "minStock": 5,
         "categoryId": 3,
         "providerId": 2,
-        "active": true
+        "active": true,
+        "image": "alfajor.webp"
     }
 ]

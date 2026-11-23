@@ -1,0 +1,42 @@
+/* ProductImage.css: miniatura cuadrada y cuadro de reemplazo cuando no hay imagen. */
+
+.product-image {
+  display: block;
+  flex-shrink: 0;           /* no se achica si el texto de al lado es largo */
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;        /* recorta para llenar el cuadrado sin deformar la foto */
+}
+
+/* Sin imagen: cuadro crema con la inicial en marrón. */
+.product-image--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--inv-border);
+  background: var(--inv-surface-alt);
+  color: var(--inv-brand);
+  font-weight: 700;
+}
+/* Celda de producto: imagen a la izquierda y nombre/descripción apilados a la derecha. */
+.product-list__product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-list__product-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.product-image--large {
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
+}
+
+.product-image--empty.product-image--large {
+  font-size: 2.5rem; /* la inicial crece junto con el cuadro */
+}
