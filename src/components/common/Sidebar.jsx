@@ -10,13 +10,14 @@ import {
 } from 'lucide-react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
-import './Sidebar.css'
+import '../styles/Sidebar.css'
 
 const adminItems = [
   { label: 'Productos', to: '/products', icon: Package },
   { label: 'Categorías', to: '/categories', icon: Tag },
   { label: 'Proveedores', to: '/providers', icon: Truck },
   { label: 'Usuarios', to: '/users', icon: Users },
+  { label: 'Historial de ventas', to: '/sales/history', icon: Receipt },
 ]
 
 const employeeItems = [
