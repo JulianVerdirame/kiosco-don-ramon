@@ -1,5 +1,5 @@
 .inventory-field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
-.inventory-field__label { font-size: 0.85rem; font-weight: 600; color: white; }
+.inventory-field__label { font-size: 0.85rem; font-weight: 600; color: black; }
 .inventory-field__control {
   width: 100%;
   box-sizing: border-box;

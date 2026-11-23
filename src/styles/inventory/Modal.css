@@ -1,0 +1,55 @@
+/* Modal.css: estilo del <dialog>. El navegador ya lo centra y dibuja el fondo;
+   acá solo se le da color, tamaño y forma. */
+
+.app-modal {
+  width: min(560px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  padding: 0;               /* sin padding: así un clic en el fondo se distingue de uno adentro */
+  border: none;
+  border-radius: 12px;
+  background: var(--inv-surface, #ffffff);
+  color: var(--inv-text, #3b2a1e);
+  text-align: left;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* El fondo oscuro lo dibuja el navegador; solo se elige el color. */
+.app-modal::backdrop {
+  background: rgba(59, 42, 30, 0.55);
+}
+
+.app-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--inv-brand, #7a4a2b);
+  color: #ffffff;
+}
+
+.app-modal__title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: inherit;
+}
+
+.app-modal__close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.app-modal__close:hover {
+  color: var(--inv-accent, #e8a33d);
+}
+
+.app-modal__body {
+  padding: 20px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
