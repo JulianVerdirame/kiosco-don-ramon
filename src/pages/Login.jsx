@@ -12,7 +12,7 @@ export const Login = () => {
 
   const navigate = useNavigate()
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault()
 
     if (!login(username.trim(), password)) {

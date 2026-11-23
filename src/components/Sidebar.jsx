@@ -9,8 +9,8 @@ import {
   Receipt,
 } from 'lucide-react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { useAuth } from '../../hooks/useAuth'
-import '../styles/Sidebar.css'
+import { useAuth } from '../hooks/useAuth'
+import './styles/Sidebar.css'
 
 const adminItems = [
   { label: 'Productos', to: '/products', icon: Package },

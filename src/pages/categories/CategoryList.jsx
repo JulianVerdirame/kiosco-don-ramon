@@ -11,6 +11,8 @@ import {
 } from '../../services/categoryService';
 import '../../styles/inventory/inventory.css';
 import '../../styles/inventory/CategoryList.css';
+import { TitleCard } from '../../components/common/TitleCard';
+import { Tag } from 'lucide-react';
 
 
 export default function CategoryList() {
@@ -43,19 +45,20 @@ export default function CategoryList() {
 
   return (
     <section className="category-list">
-      <div className="category-list__header">
-        <div>
-          <h1 className="category-list__title">Categorías</h1>
-          <p className="category-list__subtitle">Organizá los productos para encontrarlos más rápido</p>
-        </div>
-        <button className="inventory-button inventory-button--accent" onClick={() => setEditing('new')}>+ Nueva categoría</button>
-      </div>
+      
+      <TitleCard 
+        title="Categorías" 
+        subtitle="Organizá los productos para encontrarlos más rápido" 
+        icon={Tag} 
+        textButton="+ Nueva categoría" 
+        funcButton={() => setEditing('new')} 
+      />
 
       {notice && (
         <div className={`inventory-notice inventory-notice--${notice.tone}`} onClick={() => setNotice(null)}>{notice.text}</div>
       )}
 
-      <div className="category-list__table-wrap">
+      <div className="table-wrap">
         <table className="inventory-table">
           <thead>
             <tr>
