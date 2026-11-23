@@ -10,7 +10,7 @@ import {
 } from 'lucide-react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
-import './Sidebar.css'
+import '../styles/Sidebar.css'
 
 const adminItems = [
   { label: 'Productos', to: '/products', icon: Package },
