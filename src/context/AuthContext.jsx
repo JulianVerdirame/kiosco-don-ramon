@@ -16,6 +16,15 @@ function getInitialUser() {
   return user
 }
 
+const resetLocalStorage = () => {
+  localStorage.removeItem(SESSION_KEY);
+  localStorage.removeItem('kiosco-don-ramon:products');
+  localStorage.removeItem('kiosco-don-ramon:categories');
+  localStorage.removeItem('kiosco-don-ramon:providers');
+  localStorage.removeItem('kiosco-don-ramon:users');
+  localStorage.removeItem('kiosco-don-ramon:sales');
+}
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(getInitialUser)
 
@@ -32,7 +41,7 @@ export function AuthProvider({ children }) {
   }
 
   function logout() {
-    localStorage.removeItem(SESSION_KEY)
+    resetLocalStorage();
     setUser(null)
   }
 

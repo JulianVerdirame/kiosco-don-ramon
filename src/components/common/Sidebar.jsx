@@ -17,6 +17,7 @@ const adminItems = [
   { label: 'Categorías', to: '/categories', icon: Tag },
   { label: 'Proveedores', to: '/providers', icon: Truck },
   { label: 'Usuarios', to: '/users', icon: Users },
+  { label: 'Historial de ventas', to: '/sales/history', icon: Receipt },
 ]
 
 const employeeItems = [
