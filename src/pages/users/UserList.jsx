@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Alert, Badge, Button, Card, Modal, Table } from 'react-bootstrap';
+import { Alert, Badge, Button, Card, Modal as BootstrapModal, Table } from 'react-bootstrap';
 import { Users } from 'lucide-react';
 import UserForm from './UserForm';
 import { TitleCard } from '../../components/common/TitleCard';
@@ -9,6 +9,7 @@ import {
   getUsers,
   updateUser,
 } from '../../services/userService';
+import Modal from '../../components/common/InventoryModal';
 
 export const UserList = () => {
   const [users, setUsers] = useState(getUsers);
@@ -121,47 +122,36 @@ export const UserList = () => {
         </Card.Body>
       </Card>
 
-      <Modal
-        show={editing !== null}
-        onHide={() => setEditing(null)}
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>
-            {editing === 'new' ? 'Nuevo usuario' : 'Editar usuario'}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {editing && (
-            <UserForm
-              initial={editing === 'new' ? undefined : editing}
-              onSubmit={handleSave}
-              onCancel={() => setEditing(null)}
-            />
-          )}
-        </Modal.Body>
-      </Modal>
+      {editing && (
+        <Modal title={editing === 'new' ? 'Nuevo usuario' : 'Editar usuario'} onClose={() => setEditing(null)}>
+          <UserForm
+            initial={editing === 'new' ? undefined : editing}
+            onSubmit={handleSave}
+            onCancel={() => setEditing(null)}
+          />
+        </Modal>
+      )}
 
-      <Modal
+      <BootstrapModal
         show={toDelete !== null}
         onHide={() => setToDelete(null)}
         centered
       >
-        <Modal.Header closeButton>
-          <Modal.Title>Desactivar usuario</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        <BootstrapModal.Header closeButton>
+          <BootstrapModal.Title>Desactivar usuario</BootstrapModal.Title>
+        </BootstrapModal.Header>
+        <BootstrapModal.Body>
           ¿Estás seguro de desactivar al usuario <strong>{toDelete?.name}</strong>?
-        </Modal.Body>
-        <Modal.Footer>
+        </BootstrapModal.Body>
+        <BootstrapModal.Footer>
           <Button variant="secondary" onClick={() => setToDelete(null)}>
             No
           </Button>
           <Button variant="danger" onClick={handleDelete}>
             Sí
           </Button>
-        </Modal.Footer>
-      </Modal>
+        </BootstrapModal.Footer>
+      </BootstrapModal>
     </div>
   );
 }
