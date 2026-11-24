@@ -12,7 +12,7 @@
 }
 .inventory-button:hover { background: var(--inv-surface-alt); }
 
-/* Acción principal: Nuevo, Guardar */
+/* Acción principal: Guardar */
 .inventory-button--primary { background: var(--inv-brand); border-color: var(--inv-brand); color: #fff; }
 .inventory-button--primary:hover { background: var(--inv-brand-dark); border-color: var(--inv-brand-dark); }
 

@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { Card, Table, Badge, Form, Row, Col, InputGroup } from 'react-bootstrap';
 import { getSales } from '../../services/salesService';
+import { getUserById } from '../../services/userService';
 import { History, Receipt, Search } from 'lucide-react';
 import { TitleCard } from '../../components/common/TitleCard';
+
+const getEmployeeName = (sale) =>
+  getUserById(sale.employeeId)?.name || 'Empleado';
 
 export default function SalesHistory() {
   const [sales] = useState(() => getSales());
@@ -10,7 +14,7 @@ export default function SalesHistory() {
   const [filterDate, setFilterDate] = useState('');
 
   const filteredSales = sales.filter(sale => {
-    const matchesEmployee = (sale.employee || "Empleado")
+    const matchesEmployee = getEmployeeName(sale)
       .toLowerCase()
       .includes(filterEmployee.toLowerCase());
 
@@ -108,7 +112,7 @@ export default function SalesHistory() {
                       </td>
                       <td>
                         <Badge bg="light" text="dark" className="border">
-                          {sale.employee || "Empleado"}
+                          {getEmployeeName(sale)}
                         </Badge>
                       </td>
                       <td className="text-end pe-3 fw-bold text-success fs-6">

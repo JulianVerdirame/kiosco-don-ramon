@@ -5,27 +5,4 @@
 }
 
 
-/* Barra de búsqueda y filtros */
-.product-list__toolbar {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 14px;
-}
-.product-list__search,
-.product-list__filter {
-  border: 1px solid var(--inv-border);
-  border-radius: var(--inv-radius);
-  padding: 8px 12px;
-  background: var(--inv-surface);
-  color: var(--inv-text);
-  font: inherit;
-}
-.product-list__search { flex: 1; min-width: 200px; }
-.product-list__checkbox { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
-
-/* Tabla */
-.product-list__description { display: block; color: #6b7570; }
 .product-list__min-stock   { color: black; }
-.product-list__actions { display: flex; gap: 10px; justify-content: flex-end; }
